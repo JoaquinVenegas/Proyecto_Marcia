@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-calendario',
   templateUrl: './calendario.page.html',
   styleUrls: ['./calendario.page.scss'],
+  standalone: false,
 })
 export class CalendarioPage implements OnInit {
 

@@ -1,2 +1,72 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+
+:root{
+    $colors: (
+        primary:    #3880ff,    // Azul principal
+        secondary:  #0cd1e8,    // Turquesa
+        tertiary:   #7044ff,    // Púrpura
+        success:    #10dc60,    // Verde
+        warning:    #ffc409,    // Amarillo
+        danger:     #ff3b30,    // Rojo
+        light:      #ffffff,    // Blanco
+        medium:     #e0e0e0,    // Gris medio
+        dark:       #222428     // Negro oscuro       
+    );
+    .header{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: large;
+        font-family: 'Times New Roman', Times, serif;
+        height: 10px;
+    }
+    .footer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: medium;
+        font-family: 'Times New Roman', Times, serif;
+        height: min-content;
+        color: gray
+    }
+    .card{
+        display: flex;
+        align-items: center;
+        width: auto;
+        padding: 10%;
+        border-radius: 2%;
+    }
+    .input {
+        width: 90%;
+        height: 8px;
+        border: 1px solid grey;
+        margin-bottom: 4px;
+    }
+    .button {
+        width: 95%;
+        height: 6px;
+        display: flex;
+        flex-direction: row;
+        font-size: small;
+    }
+    .center-flex {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    .text-center{
+        display: flex;
+        flex-direction: row;
+    }
+    .color-card{
+        background: linear-gradient(to top left, violet, blue);
+    }
+    .text{
+        color:white;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .br1{
+        margin: 30px; 
+    }
+}
