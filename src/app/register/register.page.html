@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <ion-header collapse="condense" style="height: 15px;">
     <ion-toolbar>
       <ion-title size="large" class="header">Register</ion-title>
     </ion-toolbar>
@@ -13,9 +13,9 @@
   <ion-card class="card center-flex color-card">
     <br class="br1">
     <ion-input class="input text" label="Ingrese su nombre: "> </ion-input>
-    <ion-input class="input text" fill="solid" ngModel email label="Ingrese su correo: "></ion-input>
-    <ion-input class="input text" type="password" label="Ingrese su contraseña: "></ion-input>
-    <ion-input class="input text" type="password" label="Repita su contraseña: "></ion-input>
+    <ion-input class="input text" fill="solid" ngModel email placeholder="Ingrese su correo: "></ion-input>
+    <ion-input class="input text" type="password" placeholder="Ingrese su contraseña: "></ion-input>
+    <ion-input class="input text" type="password" placeholder="Repita su contraseña: "></ion-input>
     <br class="br1">
     <ion-button color="secondary" class="button"> Confirmar </ion-button>
     <a router-link href="login">Tengo cuenta. </a>
