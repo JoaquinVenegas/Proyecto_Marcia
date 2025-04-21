@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
+import { NgModule, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { IonDatetimeButton, IonicModule } from '@ionic/angular';
+import { IonDatetime, IonDatetimeButton, IonicModule } from '@ionic/angular';
 
 import { DatetimePageRoutingModule } from './datetime-routing.module';
 
@@ -17,4 +17,4 @@ import { DatetimePage } from './datetime.page';
   ],
   declarations: [DatetimePage]
 })
-export class DatetimePageModule {}
+export class DatetimePageModule{}
