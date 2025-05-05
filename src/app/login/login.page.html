@@ -1,27 +1,69 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title class="ion-text-center"> BIENVENIDO A MARCIA 
-      <br> 
-      tu app secretaria
-    </ion-title>
+    <ion-title class="ion-text-center">BIENVENIDO A MARCIA<br>tu app secretaria</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-    <ion-card class="card center-flex color-card">
-      <img src="assets/icon/MARCIALOGOYTEXTO.jpg" alt="Logo de Marcia" class="logo">
+  <ion-card class="card center-flex color-card">
+    <img src="assets/icon/MARCIALOGOYTEXTO.jpg" alt="Logo de Marcia" class="logo">
+    <br class="br1">
+    <form [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
+      <!-- Campo Login -->
+      <ion-input 
+        formControlName="login" 
+        class="input.text" 
+        fill="solid" 
+        placeholder="Ingresa tu nombre: "
+        (blur)="loginForm.get('login')?.markAsTouched()"
+      ></ion-input>
+      <div *ngIf="isValidField('login')" class="error-message">
+        {{ getErrorMessage('login') }}
+      </div>
+
+      <!-- Campo Email -->
+      <ion-input 
+        formControlName="email" 
+        class="input.text" 
+        fill="solid" 
+        type="email"
+        placeholder="Ingresa tu correo: "
+        (blur)="loginForm.get('email')?.markAsTouched()"
+      ></ion-input>
+      <div *ngIf="isValidField('email')" class="error-message">
+        {{ getErrorMessage('email') }}
+      </div>
+
+      <!-- Campo Password -->
+      <ion-input 
+        formControlName="password" 
+        class="input.text" 
+        fill="solid" 
+        type="password"
+        placeholder="Contraseña: "
+        (blur)="loginForm.get('password')?.markAsTouched()"
+      ></ion-input>
+      <div *ngIf="isValidField('password')" class="error-message">
+        {{ getErrorMessage('password') }}
+      </div>
+
       <br class="br1">
-      <ion-input class="input.text" fill="solid" placeholder="Ingresa tu nombre: "> </ion-input>
-      <ion-input class="input.text" fill="solid" ngModel email placeholder="Ingresa tu correo: "></ion-input>
-      <ion-input class="input.text" fill="solid" type="password" placeholder="Contraseña: "></ion-input>
-      <br class="br1">
-      <ion-button class="button"> INICIAR SESIÓN </ion-button>
-      <br>
-      <a router-link href="changepassword"> Recuperar contraseña </a>
-      <br>
-      <a router-link href="register"> ¿Eres nuevo? Registrate acá </a>
-    </ion-card>
+      <ion-button 
+        type="submit" 
+        class="button" 
+        [disabled]="!loginForm.valid"
+      >
+        INICIAR SESIÓN
+      </ion-button>
+    </form>
+
+    <br>
+    <a routerLink="/changepassword">Recuperar contraseña</a>
+    <br>
+    <a routerLink="/register">¿Eres nuevo? Registrate acá</a>
+  </ion-card>
+
   <ion-footer>
-    <ion-title class="footer">MARCIA app. &#64;DuocUC. 2025. </ion-title>
+    <ion-title class="footer">MARCIA app. &#64;DuocUC. 2025.</ion-title>
   </ion-footer>
 </ion-content>
