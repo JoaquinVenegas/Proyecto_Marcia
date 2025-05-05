@@ -1,27 +1,24 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Login</ion-title>
+    <ion-title> BIENVENIDO A MARCIA <br> 
+      tu app secretaria</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense" style="height: 15px;">
-    <ion-toolbar>
-      <ion-title size="large" class="header">Login</ion-title>
-    </ion-toolbar>
-  </ion-header>
     <ion-card class="card center-flex color-card">
       <br class="br1">
-      <ion-input class="input text" placeholder="Ingrese su nombre: "> </ion-input>
-      <ion-input class="input text" fill="solid" ngModel email placeholder="Ingrese su correo: "></ion-input>
-      <ion-input class="input text" type="password" placeholder="Ingrese su contraseña: "></ion-input>
+      <ion-input class="input text" placeholder="Ingresa tu nombre: "> </ion-input>
+      <ion-input class="input text" fill="solid" ngModel email placeholder="Ingresa tu correo: "></ion-input>
+      <ion-input class="input text" type="password" placeholder="Contraseña: "></ion-input>
       <br class="br1">
-      <ion-button color="secondary" class="button"> Ingresar </ion-button>
+      <ion-button class="button"> INICIAR SESIÓN </ion-button>
       <br>
-      <a router-link href="changepassword"> Recuperar contraseña. </a>
-      <a router-link href="register"> Crear nueva cuenta. </a>
+      <a router-link href="changepassword"> Recuperar contraseña </a>
+      <br>
+      <a router-link href="register"> ¿Eres nuevo? Registrate acá </a>
     </ion-card>
   <ion-footer>
-    <ion-title class="footer">MARCIA app. &#64;DuocUC </ion-title>
+    <ion-title class="footer">MARCIA app. &#64;DuocUC. 2025. </ion-title>
   </ion-footer>
 </ion-content>

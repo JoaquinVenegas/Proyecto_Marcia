@@ -5,62 +5,30 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large" class="header">Calendario</ion-title>
-    </ion-toolbar>
-  </ion-header>
   <ion-card class="card center-flex color-card" size="large">
-
     <ion-card class="card-mini color-card2" size="small">
-      <ion-datetime 
-            id="datetime" 
-            class="calendario" 
-            locale="es-ES" 
-            presentation="date-time" 
-            [formatOptions]="{
-            date: {
-              weekday: 'short',
-              month: 'long',
-              day: '2-digit',
-            },
-            time: {
-              hour: '2-digit',
-              minute: '2-digit',
-            },}">
-            <span slot="time-label">Hora: </span>
-          </ion-datetime>
-
-      <br class="br1">
-
-        <ion-datetime-button datetime="datetime"></ion-datetime-button>
-        <ion-modal [keepContentsMounted]="true">
-          <ng-template style="background: transparent;">
-            <ion-datetime 
-              id="datetime" 
-              class="calendario" 
-              locale="es-ES" 
-              presentation="date" 
-              [formatOptions]="{
-              date: {
-                weekday: 'short',
-                month: 'long',
-                day: '2-digit',
-              },
-              time: {
-                hour: '2-digit',
-                minute: '2-digit',
-              },}"></ion-datetime>
-
-          </ng-template>
-        </ion-modal>
-        <br>
-        <div class="ion-text-center">
-          <ion-button shape="round"> Guardar </ion-button>
-        </div>
+      <ion-datetime
+        id="datetime"
+        class="calendario"
+        locale="es-ES"
+        presentation="date-time"
+        [formatOptions]="{
+          date: {
+            weekday: 'short',
+            month: 'long',
+            day: '2-digit',
+          },
+          time: {
+            hour: '2-digit',
+            minute: '2-digit',
+          }
+        }"
+        [(ngModel)]="selectedDate">
+      </ion-datetime>
+      
+      <div class="ion-text-center">
+        <ion-button shape="round" (click)="saveEvent()">Crear Nuevo Evento</ion-button>
+      </div>
     </ion-card>
-
-
-
   </ion-card>
 </ion-content>

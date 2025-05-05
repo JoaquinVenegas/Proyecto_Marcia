@@ -5,6 +5,7 @@ import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
+import { EventService } from './services/event.service'
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
