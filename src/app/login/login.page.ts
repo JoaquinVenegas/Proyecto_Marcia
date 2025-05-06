@@ -61,7 +61,7 @@ export class LoginPage implements OnInit {
 
         // Redireccionar después del login exitoso
         await new Promise(resolve => setTimeout(resolve, 1500));
-        this.router.navigate(['/home']);
+        this.router.navigate(['/calendario']);
       }catch(error){
         console.error('Error al guardar datos:', error);
       }

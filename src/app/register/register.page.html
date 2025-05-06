@@ -8,13 +8,68 @@
   <ion-card class="card center-flex color-card">
     <img src="assets/icon/MARCIALOGOYTEXTO.jpg" alt="Logo de Marcia" class="logo">
       <br class="br1">
-    <ion-input class="input.text" fill="solid" label="Ingresa tu nombre: "> </ion-input>
-    <ion-input class="input.text" fill="solid" ngModel email placeholder="Ingresa tu correo: "></ion-input>
-    <ion-input class="input.text" fill="solid" type="password" placeholder="Ingresa tu contraseña: "></ion-input>
-    <ion-input class="input.text" fill="solid" type="password" placeholder="Repite la contraseña: "></ion-input>
+      <form [formGroup]="registerForm" (ngSubmit)="register()" novalidate>
+        <!-- Campo nombre -->
+        <ion-input 
+          formControlName="nombre" 
+          class="input.text" 
+          fill="solid" 
+          placeholder="Ingresa tu nombre: "
+          (blur)="registerForm.get('login')?.markAsTouched()"
+        ></ion-input>
+        <div *ngIf="isValidField('login')" class="error-message">
+          {{ getErrorMessage('login') }}
+        </div>
+  
+        <!-- Campo Email -->
+        <ion-input 
+          formControlName="email" 
+          class="input.text" 
+          fill="solid" 
+          type="email"
+          placeholder="Ingresa tu correo: "
+          (blur)="registerForm.get('email')?.markAsTouched()"
+        ></ion-input>
+        <div *ngIf="isValidField('email')" class="error-message">
+          {{ getErrorMessage('email') }}
+        </div>
+  
+        <!-- Campo Password -->
+        <ion-input 
+          formControlName="password" 
+          class="input.text" 
+          fill="solid" 
+          type="password"
+          placeholder="Contraseña: "
+          (blur)="registerForm.get('password')?.markAsTouched()"
+        ></ion-input>
+        <div *ngIf="isValidField('password')" class="error-message">
+          {{ getErrorMessage('password') }}
+        </div>
+
+        <!-- Campo RepeatPassword -->
+        <ion-input 
+          formControlName="repeatpassword" 
+          class="input.text" 
+          fill="solid" 
+          type="password"
+          placeholder="Repita la Contraseña: "
+          (blur)="registerForm.get('password')?.markAsTouched()"
+        ></ion-input>
+        <div *ngIf="isValidField('password')" class="error-message">
+          {{ getErrorMessage('password') }}
+        </div>
+  
+        <br class="br1">
+        <ion-button 
+          type="submit" 
+          class="button" 
+          [disabled]="!registerForm.valid"
+        >
+          CREAR CUENTA
+        </ion-button>
+      </form>
     <br class="br1">
-    <ion-button class="button"> LISTO, CREAR CUENTA </ion-button>
-    <br>
     <a router-link href="login"> Ya tengo cuenta </a>
     <br>
   </ion-card>
